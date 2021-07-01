@@ -173,17 +173,18 @@ def main_loop(web3,contract,function_info):
     # creating link the function to the user interface
     #CreateTender
     title = "Create Tender"
-    create_tender_fields = ('Title','Description','Start Date','Expiry Date','Price', 'Time To Deliver', 'Contractor Rating')
+    create_tender_fields = ('tender name','description','n seconds to send hash','n seconds to send file','weight price', 'weight time', 'weight environment')
     elem_1= makeform(second_frame_PA, create_tender_fields, title=title, description=function_info[title])
     btn_1 = elem_1["btn"]
     btn_1['command'] = lambda arg1=web3, arg2=contract, arg3=elem_1: create_tender(arg1,arg2,arg3)
     
     #placeBid
     title = 'Place Bid'
-    place_bid_fields = ('Tender ID','Price','Time','Contractor Rating')
+    place_bid_fields = ('tender id','price','time','environment')
     elem_2 = makeform(second_frame_contractor, place_bid_fields,title=title, description=function_info[title])
     btn_2 = elem_2['btn']
     btn_2['command'] = lambda arg1=web3, arg2=contract, arg3=elem_2: send_bid(arg1,arg2,arg3)
+    
     
     #concludeBid
     title = 'Conclude Bid'
