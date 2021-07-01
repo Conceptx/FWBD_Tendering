@@ -65,7 +65,7 @@ def makeform(root, fields, title="Lorem Ipsum", description="Lorem Ipsum descrip
         
     # button to call the
     row = Frame(root)
-    btn = Button(row, text = "Call", height=2, width=12)
+    btn = Button(row, text = "Save", height=2, width=12)
     row.pack(side=TOP, fill=X, expand = True)
     btn.pack(side= LEFT,padx = 5 , pady = 5)
     entries["btn"]=btn
@@ -81,7 +81,7 @@ def makeform(root, fields, title="Lorem Ipsum", description="Lorem Ipsum descrip
 def main_loop(web3,contract,function_info):
     account_list = web3.eth.accounts
     window = Tk()
-    window.title("Smart Contract Tendering")
+    window.title("Blockchain Procurement System by Faulen Masara (H170393R)")
     window.geometry('600x750')
     
     #creating tabS
@@ -93,7 +93,7 @@ def main_loop(web3,contract,function_info):
     tab_citizen = ttk.Frame(tab_parent)
     
     tab_parent.add(tab_login, text="Login")
-    tab_parent.add(tab_pa, text="Public Administration")
+    tab_parent.add(tab_pa, text="Public Administrator")
     tab_parent.add(tab_contractor, text="Contractor")
     tab_parent.add(tab_citizen, text="Notice Board")
     tab_parent.pack(expand=1, fill='both')
