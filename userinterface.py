@@ -215,21 +215,21 @@ def main_loop(web3,contract,function_info):
     
     #PA give permission to contractor to place bid
     title = 'Allow Companies'
-    allow_companies_fields = ('Allowed Companies',)
+    allow_companies_fields = ('allowed companies',)
     elem_7 = makeform(second_frame_PA, allow_companies_fields, title = title, description= function_info[title])
     btn_7 = elem_7['btn']
     btn_7['command'] = lambda arg1=web3, arg2=contract, arg3=elem_7: allowed_companies_ids(arg1, arg2, arg3)
     
     #PA see offer given tender id
     title = "Get Bids Details"
-    get_bids_details_fields = ('Tender ID',)
+    get_bids_details_fields = ('tender id',)
     elem_8 = makeform(second_frame_citizen, get_bids_details_fields, title=title, description=function_info[title], view=True)
     btn_8 = elem_8['btn']
     btn_8['command'] = lambda arg1=web3, arg2=contract, arg3=elem_8: get_bids_details(arg1, arg2, arg3)
     
     #declare the winner
     title = 'Assign Winner'
-    assing_winner_fields = ('Tender ID',)
+    assing_winner_fields = ('tender id',)
     elem_9 = makeform(second_frame_PA, assing_winner_fields, title=title, description=function_info[title])
     btn_9 = elem_9['btn']
     btn_9['command'] = lambda arg1=web3, arg2=contract, arg3=elem_9: assign_winner(arg1, arg2, arg3)
